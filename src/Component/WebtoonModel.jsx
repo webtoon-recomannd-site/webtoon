@@ -14,7 +14,7 @@ import { ReactComponent as Green } from "../img/green.svg"
 const BoxModeL = styled.div`
 display : flex;
 flex-direction: column;
-width : calc( (100% - 170px) / 3);
+width : 100%;
 height: 273px;
 background: #FFFFFF;
 border: 1px solid #CECECE;

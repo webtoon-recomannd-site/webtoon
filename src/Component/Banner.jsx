@@ -71,7 +71,7 @@ export default function Banner() {
             </SubTitle>
             </div>
             <nav className="header">
-            <NavLink className='Logo'to="/"><Logo>웹툰 중개 사이트</Logo></NavLink>
+            <NavLink className='Logo'to="/"><Logo>Middle Webtoon</Logo></NavLink>
             <ul>
             <NavLink to="/"><li>배너1</li></NavLink>
             <NavLink to="/insert"><li >배너2</li></NavLink>
@@ -79,8 +79,6 @@ export default function Banner() {
             <NavLink to="/shopping"><li>배너4</li></NavLink>
             </ul>
             </nav>
-
-
             {/* {
             isopen && (<Modal open={isopen}
            onClose={ () => {setIsopen(false);}}

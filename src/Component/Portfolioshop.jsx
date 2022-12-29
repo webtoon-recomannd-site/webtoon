@@ -1,8 +1,13 @@
-import React,{useState} from 'react'
+import React,{useState,Component} from 'react'
 import styled from 'styled-components';
-import { ReactComponent as Ten } from "../img/ten.svg";
-import { ReactComponent as Search } from "../img/Search.svg"
+import { ReactComponent as Right } from "../img/rightarrow.svg";
+import { ReactComponent as Left } from "../img/leftarrow.svg";
 import BoxModel from './BoxModel';
+import Example from './WebtoonModel';
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   width="current"
@@ -74,49 +79,6 @@ line-height: 19px;
 letter-spacing: -1px;
 color: #7C7C7C;
 `;
-const Frame = styled.form`
-font-family: 'Noto Sans';
-font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 22px;
-letter-spacing: -1px;
-color: #000000;
-display : flex;
-height: 52px;
-flex-direction : row;
-align-items : center;
-gap : 10px;
-`;
-const Input = styled.input`
-width: 98px;
-height: 32px;
-background: #F9F9FD;
-border: 0.5px solid #C9C6E1;
-border-radius: 5px;
-padding : 10px;
-box-sizing: border-box;
-text-align : right;
-`;
-const Button = styled.button`
-display : flex;
-gap : 23px;
-align-items : center;
-justify-content : center;
-width: 181px;
-height: 52px;
-background: #FF7759;
-border-radius: 7px;
-border : none;
-font-family: 'Noto Sans';
-font-style: normal;
-font-weight: 500;
-font-size: 16px;
-line-height: 22px;
-letter-spacing: -1px;
-color: #FFFFFF;
-margin-left : auto;
-`;
 const MainLayout = styled.div`
  max-width : 1200px;
  margin : 0 auto;
@@ -127,6 +89,15 @@ const Frame1 = styled.div`
 display : flex;
 gap : 30px;
 flex-wrap: wrap;
+align-items: center;
+
+`;
+const Exam = styled.div`
+display : flex;
+gap : 30px;
+flex-wrap: wrap;
+align-items: center;
+
 `;
 const Frame2 = styled.div`
 display : flex;
@@ -135,22 +106,36 @@ flex-wrap: wrap;
 margin-bottom : 73px;
 `;
 export default function Portfolioshop() {
-
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    nextArrow: (<div><Right/></div>),
+    prevArrow: (<div><Left /></div>)
+  };
   return (
     <>
     <MainLayout>
     <Title><TextC><span>내가 자주보는 </span>웹툰</TextC><Text1>내가 좋아할것 같은 웹툰</Text1></Title>
-    <Frame1>
-    <BoxModel flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><BoxModel flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><BoxModel flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/>
-    </Frame1>
+      {/* <Left/> */}
+    <Slider {...settings}>
+    <Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/>
+    {/* <Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/> */}
+    </Slider>
+    {/* <Right/> */}
     <Title><TextC><span>이달의 </span>신작</TextC><Text1>각 플랫폼의 이번달 신작</Text1></Title>
-    <Frame1>
-    <BoxModel flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><BoxModel flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><BoxModel flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/>
-    </Frame1>
+    <Slider {...settings}>
+    <Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/>
+    {/* <Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/> */}
+    </Slider>
     <Title><TextC><span>내가 보는것과 유사한 </span>웹툰</TextC><Text1>비슷한 장르입니다</Text1></Title>
-    <Frame2>
-    <BoxModel flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><BoxModel flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><BoxModel flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/>
-    </Frame2>
+    <Slider {...settings}>
+    <Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/>
+    {/* <Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/><Example flatform="네이버" name="화산귀환" genre="무협 / 액션" like="123"/> */}
+    </Slider>
+    <Frame2/>
     </MainLayout>
     </>
   )
